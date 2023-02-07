@@ -1,0 +1,13 @@
+@startuml Auth
+actor "User" as User
+
+rectangle Authentication {
+  usecase "Enter the application by browser URL" as step1
+  usecase "User is redirected to Office 365 Sign-in page" as step2
+  usecase "User is redirected to the application URL\nafter beeing logged in" as step3
+}
+
+step1 .d.> step2
+step2 .d.> step3
+User -d-> Authentication
+@enduml
